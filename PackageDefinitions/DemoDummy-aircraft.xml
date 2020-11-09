@@ -1,0 +1,25 @@
+<AssetPackage Name="DemoDummy-aircraft" Version="0.1.0">
+	<ItemSettings>
+		<ContentType>AIRCRAFT</ContentType>
+		<Description/>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>true</VisibleInStore>
+		<CanBeReferenced>true</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>Copy</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\DemoDummy-aircraft\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\DemoDummy-aircraft\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="DemoDummy_Aircraft">
+			<Type>SimObject</Type>
+			<AssetDir>PackageSources\SimObjects\Airplanes\Dummy_EventDemo_Aircraft\</AssetDir>
+			<OutputDir>SimObjects\Airplanes\Dummy_EventDemo_Aircraft\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>

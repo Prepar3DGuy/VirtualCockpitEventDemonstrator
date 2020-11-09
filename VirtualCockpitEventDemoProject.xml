@@ -1,0 +1,7 @@
+<Project Version="1" Name="VirtualCockpitEventDemo_Project" FolderName="Packages">
+	<OutputDirectory>.</OutputDirectory>
+	<TemporaryOutputDirectory>_PackageInt</TemporaryOutputDirectory>
+	<Packages>
+		<Package>PackageDefinitions\DemoDummy-aircraft.xml</Package>
+	</Packages>
+</Project>
