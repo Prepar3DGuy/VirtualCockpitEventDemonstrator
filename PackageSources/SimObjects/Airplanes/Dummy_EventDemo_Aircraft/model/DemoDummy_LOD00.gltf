@@ -1,6 +1,6 @@
 {
     "asset" : {
-        "copyright" : "Prepar3dGuy",
+        "copyright" : "Prepar3DGuy",
         "extensions" : {
             "ASOBO_normal_map_convention" : {
                 "tangent_space_convention" : "DirectX"
@@ -67,7 +67,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 456,
+            "count" : 425,
             "max" : [
                 4,
                 2.2114808559417725,
@@ -83,47 +83,47 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 456,
+            "count" : 425,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 456,
+            "count" : 425,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 828,
+            "count" : 768,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 5472,
+            "byteLength" : 5100,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 5472,
-            "byteOffset" : 5472
+            "byteLength" : 5100,
+            "byteOffset" : 5100
         },
         {
             "buffer" : 0,
-            "byteLength" : 3648,
-            "byteOffset" : 10944
+            "byteLength" : 3400,
+            "byteOffset" : 10200
         },
         {
             "buffer" : 0,
-            "byteLength" : 1656,
-            "byteOffset" : 14592
+            "byteLength" : 1536,
+            "byteOffset" : 13600
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 16248,
+            "byteLength" : 15136,
             "uri" : "DemoDummy_LOD00.bin"
         }
     ]
