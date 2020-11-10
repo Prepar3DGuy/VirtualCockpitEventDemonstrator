@@ -1,1 +1,34 @@
-<?xml version="1.0" encoding="utf-8" ?><ModelInfo guid="{c5be8806-9e0f-40be-8a50-f5bf64a2a090}" version="1.1">	<LODS>		<!-- Highest LOD -->		<!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->		<!-- default minSize is 0 -->		<LOD ModelFile="DemoDummy_Interior_LOD00.gltf"/>	</LODS></ModelInfo>
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ModelInfo guid="{c5be8806-9e0f-40be-8a50-f5bf64a2a090}" version="1.1">
+	<LODS>
+		<!-- Highest LOD -->
+		<!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
+		<!-- default minSize is 0 -->
+		<LOD ModelFile="DemoDummy_Interior_LOD00.gltf"/>
+	</LODS>
+	
+	<Animation name="RedButtonPushAnimation"			guid="F2A55CED-AF30-4AA6-A472-53B5C5B3EBF9" length="100" type="Standard" typeparam="AutoPlay" />
+	<Animation name="GreenButtonPushAnimation"			guid="43FB7868-FD3D-4533-9BF4-01E25596AF44" length="100" type="Sim" typeparam2="GreenButtonPushAnimation" typeparam="AutoPlay" />
+	
+	<PartInfo>
+		<Name>GreenButtonPushAnimation</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+                <Sim>
+                    <Variable>ELEVATOR DEFLECTION PCT</Variable>
+                    <Units>percent</Units>
+                    <Bias>50</Bias>
+                </Sim>
+			</Parameter>
+		</Animation>
+		<MouseRect>
+			<Cursor>Hand</Cursor>
+			<!-- <EventID>0x00011044</EventID> -->
+			<!-- <MouseFlags>LEFTSINGLE</MouseFlags> -->
+		</MouseRect>
+	</PartInfo>
+	
+</ModelInfo>
+
