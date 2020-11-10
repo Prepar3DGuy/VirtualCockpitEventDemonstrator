@@ -21,5 +21,10 @@
 			<AssetDir>PackageSources\SimObjects\Airplanes\Dummy_EventDemo_Aircraft\</AssetDir>
 			<OutputDir>SimObjects\Airplanes\Dummy_EventDemo_Aircraft\</OutputDir>
 		</AssetGroup>
+		<AssetGroup Name="DemoDummy_Aircraft_Data">
+			<Type>Copy</Type>
+			<AssetDir>PackageSources\Data\</AssetDir>
+			<OutputDir>Data\</OutputDir>
+		</AssetGroup>
 	</AssetGroups>
 </AssetPackage>
