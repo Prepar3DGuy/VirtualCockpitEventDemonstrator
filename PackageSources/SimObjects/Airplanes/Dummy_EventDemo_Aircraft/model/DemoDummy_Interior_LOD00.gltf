@@ -19,7 +19,9 @@
             "nodes" : [
                 0,
                 1,
-                2
+                2,
+                3,
+                4
             ]
         }
     ],
@@ -50,6 +52,24 @@
                 0.43247881531715393,
                 0.49780383706092834,
                 0.48326143622398376
+            ]
+        },
+        {
+            "mesh" : 3,
+            "name" : "Button_Red",
+            "translation" : [
+                -0.13907214999198914,
+                0.6624502539634705,
+                0.4869975745677948
+            ]
+        },
+        {
+            "mesh" : 4,
+            "name" : "Button_Green",
+            "translation" : [
+                -0.13907214999198914,
+                0.5026043653488159,
+                0.4869975745677948
             ]
         }
     ],
@@ -98,6 +118,22 @@
             ],
             "name" : "$SCREEN_1",
             "pbrMetallicRoughness" : {}
+        },
+        {
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
         }
     ],
     "meshes" : [
@@ -142,6 +178,46 @@
                     "material" : 2
                 }
             ]
+        },
+        {
+            "name" : "Cube",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 12,
+                        "NORMAL" : 13,
+                        "TEXCOORD_0" : 14
+                    },
+                    "indices" : 15,
+                    "material" : 3
+                }
+            ]
+        },
+        {
+            "name" : "Cube.004",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 16,
+                        "NORMAL" : 17,
+                        "TEXCOORD_0" : 18
+                    },
+                    "indices" : 15,
+                    "material" : 3
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "Cockpit_albd",
+            "uri" : "Cockpit_albd.png"
         }
     ],
     "accessors" : [
@@ -246,6 +322,68 @@
             "componentType" : 5123,
             "count" : 6,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 40,
+            "max" : [
+                0.10091499239206314,
+                0.04948054254055023,
+                0.03822977840900421
+            ],
+            "min" : [
+                -0.10091499239206314,
+                -0.049480509012937546,
+                -0.0382295697927475
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 40,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5126,
+            "count" : 40,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5123,
+            "count" : 60,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 16,
+            "componentType" : 5126,
+            "count" : 40,
+            "max" : [
+                0.10091499239206314,
+                0.04948054254055023,
+                0.03822977840900421
+            ],
+            "min" : [
+                -0.10091499239206314,
+                -0.049480509012937546,
+                -0.0382295697927475
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 17,
+            "componentType" : 5126,
+            "count" : 40,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 18,
+            "componentType" : 5126,
+            "count" : 40,
+            "type" : "VEC2"
         }
     ],
     "bufferViews" : [
@@ -308,11 +446,46 @@
             "buffer" : 0,
             "byteLength" : 12,
             "byteOffset" : 3276
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 480,
+            "byteOffset" : 3288
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 480,
+            "byteOffset" : 3768
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 320,
+            "byteOffset" : 4248
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 120,
+            "byteOffset" : 4568
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 480,
+            "byteOffset" : 4688
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 480,
+            "byteOffset" : 5168
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 320,
+            "byteOffset" : 5648
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 3288,
+            "byteLength" : 5968,
             "uri" : "DemoDummy_Interior_LOD00.bin"
         }
     ]
