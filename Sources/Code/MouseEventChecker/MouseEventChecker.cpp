@@ -14,7 +14,7 @@
 int g_Time = 0;
 int g_Font = -1;
 std::map<FsContext, NVGcontext*> g_GaugeNVGcontext;
-const int cMaxLogLength = 10;
+const int cMaxLogLength = 25;
 std::deque<std::string> g_EventLog;
 char g_OutputStr[1000] = "";
 
@@ -46,8 +46,7 @@ extern "C"
 		case PANEL_SERVICE_PRE_INITIALIZE:
 		{
 			g_Time = 0;
-			g_EventLog.push_back(std::string("First Row"));
-			g_EventLog.push_back(std::string("Second Row"));
+			g_EventLog.push_back(std::string("Play with mouse and explore log!"));
 			return true;
 		}
 		case PANEL_SERVICE_POST_INITIALIZE: break;
@@ -107,6 +106,58 @@ extern "C"
 
 	MSFS_CALLBACK void DISPLAY_mouse_callback(float fX, float fY, unsigned int iFlags)
 	{
+		std::ostringstream strMsg;
+		if (iFlags == MOUSE_MOVE)
+			return; // It works, just ignore for log
+		
+		strMsg << "T: " << g_Time << " WASM mouse callback ";
 
+		
+		switch (iFlags)
+		{
+		case MOUSE_LEFTSINGLE:
+			strMsg << "LEFTSINGLE";
+			break;
+		case MOUSE_LEFTDRAG:
+			strMsg << "LEFTDRAG";
+			break;
+		case MOUSE_RIGHTDRAG:
+			strMsg << "RIGHTDRAG";
+			break;
+		case MOUSE_MIDDLEDRAG:
+			strMsg << "MIDDLEDRAG";
+			break;
+		case MOUSE_LEFTRELEASE:
+			strMsg << "LEFTRELEASE";
+			break;
+		case MOUSE_RIGHTRELEASE:
+			strMsg << "RIGHTRELEASE";
+			break;
+		case MOUSE_MIDDLERELEASE:
+			strMsg << "MIDDLERELEASE";
+			break;
+		case MOUSE_RIGHTSINGLE:
+			strMsg << "RIGHTSINGLE";
+			break;
+		case MOUSE_MIDDLESINGLE:
+			strMsg << "MIDDLESINGLE";
+			break;
+		case MOUSE_LEFTDOUBLE:
+			strMsg << "LEFTDOUBLE";
+			break;
+		case MOUSE_MIDDLEDOUBLE:
+			strMsg << "MIDDLEDOUBLE";
+			break;
+		case MOUSE_WHEEL_UP:
+			strMsg << "MOUSE_WHEEL_UP";
+			break;
+		case MOUSE_WHEEL_DOWN:
+			strMsg << "MOUSE_WHEEL_DOWN";
+			break;
+		}
+		
+		strMsg << " x: " << fX << " y: " << fY;
+		g_EventLog.push_back(strMsg.str());
+		
 	}
 }
