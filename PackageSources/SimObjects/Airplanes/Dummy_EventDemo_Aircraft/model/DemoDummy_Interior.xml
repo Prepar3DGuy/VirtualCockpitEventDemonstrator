@@ -23,7 +23,7 @@
 		</Animation>
 		<MouseRect>
 			<Cursor>Hand</Cursor>
-			<!-- <EventID>0x11043</EventID> <!-- RedButtonClicked -->
+			<!-- <EventID>0x11043</EventID> <!-- RedButtonClicked -->			<!-- EventID or CallbackCode, not both!!! -->
 			<MouseFlags>LeftSingle+RightSingle+WheelUp+WheelDown</MouseFlags>
 			<CallbackCode>
 				(M:Event) 'LeftSingle'  scmi 0 == if{ 50 (>L:RedButtonPosition) }
@@ -49,7 +49,7 @@
 		<MouseRect>
 			<Cursor>Hand</Cursor>
 			<EventID>0x11044</EventID> <!-- GreenButtonClicked -->
-			<MouseFlags>LeftSingle+RightSingle</MouseFlags>
+			<MouseFlags>LeftSingle+RightSingle+MiddleAll</MouseFlags>
 		</MouseRect>
 	</PartInfo>
 	

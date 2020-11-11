@@ -11,12 +11,33 @@
 #include <sstream>
 #include <fstream>
 
+#define RED_BUTTON_ACTION_EVENTID 0x11043
+#define GREEN_BUTTON_ACTION_EVENTID 0x11044
+
 int g_Time = 0;
 int g_Font = -1;
 std::map<FsContext, NVGcontext*> g_GaugeNVGcontext;
 const int cMaxLogLength = 25;
 std::deque<std::string> g_EventLog;
 char g_OutputStr[1000] = "";
+
+void MyEventHandler(ID32 event, UINT32 evdata, PVOID userdata)
+{
+	std::ostringstream strMsg;
+	switch (event)
+	{
+	case GREEN_BUTTON_ACTION_EVENTID:
+		strMsg << "T: " << g_Time << " GREEN BUTTON " << "data: " << evdata; // Why always evdata == MOUSE_NONE ???
+		break;
+	case RED_BUTTON_ACTION_EVENTID:
+		strMsg << "T: " << g_Time << " RED BUTTON " << "data: " << evdata; // Why always evdata == MOUSE_NONE ???
+		break;
+	default:
+		break;
+	}
+	if (strMsg.str().length() > 0)
+		g_EventLog.push_back(strMsg.str());
+}
 
 extern "C"
 {
@@ -27,6 +48,7 @@ extern "C"
 		case PANEL_SERVICE_PRE_INSTALL:
 		{
 			sGaugeInstallData* p_install_data = (sGaugeInstallData*)pData;
+			register_key_event_handler((GAUGE_KEY_EVENT_HANDLER)MyEventHandler, NULL);
 			return true;
 		}
 		case PANEL_SERVICE_POST_INSTALL:
@@ -96,7 +118,7 @@ extern "C"
 			NVGcontext* nvgctx = g_GaugeNVGcontext[ctx];
 			nvgDeleteInternal(nvgctx);
 			g_GaugeNVGcontext.erase(ctx);
-
+			unregister_key_event_handler((GAUGE_KEY_EVENT_HANDLER)MyEventHandler, NULL);
 			return true;
 		}
 		case PANEL_SERVICE_POST_KILL: break;
@@ -153,6 +175,9 @@ extern "C"
 			break;
 		case MOUSE_WHEEL_DOWN:
 			strMsg << "MOUSE_WHEEL_DOWN";
+			break;
+		case MOUSE_NONE:
+			strMsg << "NONE";
 			break;
 		}
 		
