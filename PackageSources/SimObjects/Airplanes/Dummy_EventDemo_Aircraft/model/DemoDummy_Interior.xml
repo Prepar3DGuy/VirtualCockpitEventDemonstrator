@@ -1,1 +1,57 @@
-<?xml version="1.0" encoding="utf-8" ?><ModelInfo guid="{c5be8806-9e0f-40be-8a50-f5bf64a2a090}" version="1.1">	<LODS>		<!-- Highest LOD -->		<!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->		<!-- default minSize is 0 -->		<LOD ModelFile="DemoDummy_Interior_LOD00.gltf"/>	</LODS></ModelInfo>
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ModelInfo guid="{c5be8806-9e0f-40be-8a50-f5bf64a2a090}" version="1.1">
+	<LODS>
+		<!-- Highest LOD -->
+		<!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
+		<!-- default minSize is 0 -->
+		<LOD ModelFile="DemoDummy_Interior_LOD00.gltf"/>
+	</LODS>
+	
+	<Animation name="RedButtonPushAnimation"			guid="F2A55CED-AF30-4AA6-A472-53B5C5B3EBF9" length="100" type="Sim" typeparam="AutoPlay" />
+	<Animation name="GreenButtonPushAnimation"			guid="43FB7868-FD3D-4533-9BF4-01E25596AF44" length="100" type="Sim" typeparam2="GreenButtonPushAnimation" typeparam="AutoPlay" />
+	
+	<PartInfo>
+		<Name>RedButtonPushAnimation</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+                <Code>
+                    (L:RedButtonPosition)
+                </Code>
+			</Parameter>
+		</Animation>
+		<MouseRect>
+			<Cursor>Hand</Cursor>
+			<!-- <EventID>0x11043</EventID> <!-- RedButtonClicked -->
+			<MouseFlags>LeftSingle+RightSingle+WheelUp+WheelDown</MouseFlags>
+			<CallbackCode>
+				(M:Event) 'LeftSingle'  scmi 0 == if{ 50 (>L:RedButtonPosition) }
+				(M:Event) 'RightSingle' scmi 0 == if{ 0 (>L:RedButtonPosition) }
+				<!-- (M:Event) 'WheelUp' scmi 0 == if{ (L:RedButtonPosition) 10 - (>L:RedButtonPosition) } -->
+				<!-- (M:Event) 'WheelDown' scmi 0 == if{ (L:RedButtonPosition) 10 + (>L:RedButtonPosition) } -->
+			</CallbackCode>
+		</MouseRect>
+	</PartInfo>
+	
+	<PartInfo>
+		<Name>GreenButtonPushAnimation</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+                <Sim>
+                    <Variable>ELEVATOR DEFLECTION PCT</Variable>
+                    <Units>percent</Units>
+                    <Bias>50</Bias>
+                </Sim>
+			</Parameter>
+		</Animation>
+		<MouseRect>
+			<Cursor>Hand</Cursor>
+			<EventID>0x11044</EventID> <!-- GreenButtonClicked -->
+			<MouseFlags>LeftSingle+RightSingle</MouseFlags>
+		</MouseRect>
+	</PartInfo>
+	
+</ModelInfo>
+
